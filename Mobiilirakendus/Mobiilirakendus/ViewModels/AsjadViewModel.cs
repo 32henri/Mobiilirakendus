@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ViewModels
+namespace Mobiilirakendus.ViewModels
 {
     internal class AsjadViewModel
     {

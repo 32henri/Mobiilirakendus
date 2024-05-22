@@ -1,9 +1,12 @@
-namespace Mobiilirakendus;
-
-public partial class AsjadPage : ContentPage
+namespace Mobiilirakendus
 {
-	public AsjadPage()
-	{
-		InitializeComponent();
-	}
+    public partial class AsjadPage : ContentPage
+    {
+        public AsjadPage()
+        {
+            InitializeComponent();
+        }
+    }
+
 }
+
