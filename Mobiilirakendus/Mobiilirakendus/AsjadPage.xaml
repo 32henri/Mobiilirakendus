@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Mobiilirakendus.ViewModels"
-             xmlns:models="clr-namespace:Mobiilirakendus.Models"
-             x:DataType="vm:AsjadViewModel"
+             xmlns:viewmodels="clr-namespace:Mobiilirakendus.ViewModels"
              x:Class="Mobiilirakendus.AsjadPage"
              Title="AsjadPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Asjad Lehekülg!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <viewmodels:AsjadViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <ListView ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Price}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Entry Placeholder="Product Name" Text="{Binding SelectedProduct.Name}" />
+        <Entry Placeholder="Product Price" Text="{Binding SelectedProduct.Price}" Keyboard="Numeric" />
+
+        <Button Text="Save Product" Command="{Binding AddProductCommand}" />
+    </StackLayout>
 </ContentPage>

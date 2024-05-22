@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Mobiilirakendus.Data;
+using Mobiilirakendus.Models;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace Mobiilirakendus.ViewModels
 {
-    internal class AsjadViewModel
+    public class AsjadViewModel : ObservableObject
     {
+        private readonly DatabaseContext _databaseContext;
+        public ObservableCollection<Asjad> Asjads { get; } = new();
+
+        [ObservableProperty]
+        private Asjad _selectedAsjad;
     }
 }
