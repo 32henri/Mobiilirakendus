@@ -17,8 +17,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Entry Placeholder="Product Name" Text="{Binding SelectedProduct.Name}" />
-        <Entry Placeholder="Product Price" Text="{Binding SelectedProduct.Price}" Keyboard="Numeric" />
+        <Entry Placeholder="Product Name" Text="{Binding SelectedProduct.Name, Mode=TwoWay}" />
+        <Entry Placeholder="Product Weight" Text="{Binding SelectedProduct.Weight, Mode=TwoWay}" Keyboard="Numeric" />
 
         <Button Text="Save Product" Command="{Binding AddProductCommand}" />
     </StackLayout>

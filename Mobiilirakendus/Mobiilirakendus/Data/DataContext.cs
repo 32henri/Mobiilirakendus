@@ -27,12 +27,12 @@ namespace Mobiilirakendus.Data
             return _database.Table<Asjad>().Where(p => p.Id == id).FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveProductAsync(Asjad asjad)
+        public Task<int> SaveProductAsync(Asjad product)
         {
-            if (asjad.Id != 0)
-                return _database.UpdateAsync(asjad);
+            if (product.Id != 0)
+                return _database.UpdateAsync(product);
             else
-                return _database.InsertAsync(asjad);
+                return _database.InsertAsync(product);
         }
 
         public Task<int> DeleteProductAsync(Asjad product)
