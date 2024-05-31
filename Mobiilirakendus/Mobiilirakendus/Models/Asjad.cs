@@ -9,8 +9,8 @@ namespace Mobiilirakendus.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal Weight { get; set; }
+        public string FirstName { get; set; }
+        public decimal LastName { get; set; }
     }
 
 }
